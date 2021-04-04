@@ -10,8 +10,8 @@ describe("Testing Setup", () => {
 });
 
 describe("App", () => {
-  it("renders the app", () => {
+  it("renders the Discover screen initially", () => {
     const { getByText } = render(<App />);
-    getByText("Open up App.js to start working on your app!");
+    getByText("Discover");
   });
 });

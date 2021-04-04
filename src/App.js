@@ -1,15 +1,21 @@
-import { registerRootComponent } from "expo";
+import "react-native-gesture-handler";
 import React from "react";
-import { Text } from "react-native";
+import { registerRootComponent } from "expo";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 import { ErrorBoundary } from "./ErrorBoundary";
-import { BaseLayout } from "./components";
+import { Discover } from "./screens";
+
+const Stack = createStackNavigator();
 
 export function App() {
   return (
     <ErrorBoundary>
-      <BaseLayout>
-        <Text>Open up App.js to start working on your app!</Text>
-      </BaseLayout>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Discover" component={Discover} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </ErrorBoundary>
   );
 }
