@@ -3,16 +3,15 @@ import PropTypes from "prop-types";
 import { StyleSheet, Text, TouchableHighlight } from "react-native";
 import { Colours, Spacing } from "../styles";
 
-export function MovieCard({ data, navigate }) {
+export function MovieCard({ data: { id, title }, navigate }) {
   return (
     <TouchableHighlight
       style={styles.container}
       onPress={() => {
-        console.log("routing to movie");
-        // navigate("Genre", { id, title });
+        navigate("Detail", { id });
       }}
     >
-      <Text>{data.title}</Text>
+      <Text>{title}</Text>
     </TouchableHighlight>
   );
 }

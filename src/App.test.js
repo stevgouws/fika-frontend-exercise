@@ -1,7 +1,7 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react-native";
 import { App } from "./App";
-import { useGenres, useDiscover } from "./services/movieService";
+import { useGenres, useDiscover, useMovie } from "./services/movieService";
 
 jest.mock("./services/movieService");
 
@@ -12,6 +12,13 @@ describe("App", () => {
     });
     useDiscover.mockReturnValue({
       movies: [{ id: 1, title: "Godzilla" }],
+    });
+    useMovie.mockReturnValue({
+      details: {
+        id: 1,
+        title: "Godzilla",
+        overview: "A really interesting movie synopsis",
+      },
     });
   });
 
@@ -27,9 +34,13 @@ describe("App", () => {
     getByText("Discover");
   });
 
-  it("Routes to the genre page when an item is pressed", () => {
-    const { getByText } = render(<App />);
-    fireEvent.press(getByText("Action"));
-    getByText("Genre");
+  describe("Routing", () => {
+    it("routes to the genre page and the detail page", async () => {
+      const { getByText, findByText } = render(<App />);
+      fireEvent.press(getByText("Action"));
+      getByText("Genre");
+      fireEvent.press(getByText("Godzilla"));
+      await findByText("A really interesting movie synopsis");
+    });
   });
 });

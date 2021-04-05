@@ -16,3 +16,10 @@ export function useDiscover({ genreId }) {
   );
   return { movies: data?.results, loading, error };
 }
+
+export function useMovie({ id }) {
+  const { data, loading, error } = useFetch(
+    `${baseUrl}/movie/${id}${defaultQueryParams}`
+  );
+  return { details: data, loading, error };
+}

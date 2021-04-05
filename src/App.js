@@ -4,7 +4,7 @@ import { registerRootComponent } from "expo";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { ErrorBoundary } from "./ErrorBoundary";
-import { Discover, Genre } from "./screens";
+import { Discover, Genre, Detail } from "./screens";
 import { BaseLayout } from "./components/BaseLayout";
 
 const Stack = createStackNavigator();
@@ -25,6 +25,13 @@ export function App() {
             {props => (
               <BaseLayout>
                 <Genre {...props} />
+              </BaseLayout>
+            )}
+          </Stack.Screen>
+          <Stack.Screen name="Detail">
+            {props => (
+              <BaseLayout>
+                <Detail {...props} />
               </BaseLayout>
             )}
           </Stack.Screen>
