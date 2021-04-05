@@ -11,8 +11,9 @@ export function useGenres() {
 }
 
 export function useDiscover({ genreId }) {
+  const genreFilter = genreId ? `&with_genres=${genreId}` : "";
   const { data, loading, error } = useFetch(
-    `${baseUrl}discover/movie${defaultQueryParams}&with_genres=${genreId}`
+    `${baseUrl}discover/movie${defaultQueryParams + genreFilter}`
   );
   return { movies: data?.results, loading, error };
 }
