@@ -13,9 +13,9 @@ describe("Discover", () => {
         { id: 2, name: "Adventure" },
       ],
     });
-    const wrapper = render(<Discover />);
-    wrapper.getByText(/Action/i);
-    wrapper.getByText("Adventure");
+    const { getByText } = render(<Discover />);
+    getByText(/Action/i);
+    getByText("Adventure");
   });
 
   it("renders loading text whilst loading", () => {

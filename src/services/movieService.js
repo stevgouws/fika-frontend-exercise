@@ -9,3 +9,10 @@ export function useGenres() {
   );
   return { genres: data?.genres, loading, error };
 }
+
+export function useDiscover({ genreId }) {
+  const { data, loading, error } = useFetch(
+    `${baseUrl}discover/movie${defaultQueryParams}&with_genres=${genreId}`
+  );
+  return { movies: data?.results, loading, error };
+}
