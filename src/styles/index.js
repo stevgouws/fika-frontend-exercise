@@ -1,2 +1,3 @@
 import * as Colours from "./colours";
-export { Colours };
+import * as Spacing from "./spacing";
+export { Colours, Spacing };
