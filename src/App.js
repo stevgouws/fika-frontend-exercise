@@ -21,14 +21,20 @@ export function App() {
               </BaseLayout>
             )}
           </Stack.Screen>
-          <Stack.Screen name="Genre">
+          <Stack.Screen
+            name="Genre"
+            options={({ route }) => ({ title: route.params.name })}
+          >
             {props => (
               <BaseLayout>
                 <Genre {...props} />
               </BaseLayout>
             )}
           </Stack.Screen>
-          <Stack.Screen name="Detail">
+          <Stack.Screen
+            name="Detail"
+            options={({ route }) => ({ title: route.params.title })}
+          >
             {props => (
               <BaseLayout>
                 <Detail {...props} />

@@ -18,20 +18,17 @@ export function Genre({ route, navigation }) {
   if (error) throw error;
 
   return (
-    <>
-      <Text>{name}</Text>
-      <CardList>
-        {movies.map(movie => {
-          return (
-            <MovieCard
-              key={movie.id}
-              data={movie}
-              navigate={navigation?.navigate}
-            />
-          );
-        })}
-      </CardList>
-    </>
+    <CardList>
+      {movies.map(movie => {
+        return (
+          <MovieCard
+            key={movie.id}
+            data={movie}
+            navigate={navigation?.navigate}
+          />
+        );
+      })}
+    </CardList>
   );
 }
 

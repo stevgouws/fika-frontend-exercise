@@ -24,7 +24,6 @@ describe("Genre", () => {
           { id: 2, title: "King Kong" },
         ],
       });
-      getByText("Action");
       getByText("Godzilla");
       getByText("King Kong");
     });

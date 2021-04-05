@@ -38,7 +38,6 @@ describe("App", () => {
     it("routes to the genre page and the detail page", async () => {
       const { getByText, findByText } = render(<App />);
       fireEvent.press(getByText("Action"));
-      getByText("Genre");
       fireEvent.press(getByText("Godzilla"));
       await findByText("A really interesting movie synopsis");
     });

@@ -8,7 +8,7 @@ export function MovieCard({ data: { id, title }, navigate }) {
     <TouchableHighlight
       style={styles.container}
       onPress={() => {
-        navigate("Detail", { id });
+        navigate("Detail", { id, title });
       }}
     >
       <Text>{title}</Text>
