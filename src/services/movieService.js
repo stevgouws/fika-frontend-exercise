@@ -24,3 +24,10 @@ export function useMovie({ id }) {
   );
   return { details: data, loading, error };
 }
+
+export function useSearch({ query }) {
+  const { data, loading, error } = useFetch(
+    `${baseUrl}search/movie/${defaultQueryParams}&query=${query}`
+  );
+  return { results: data?.results, loading, error };
+}

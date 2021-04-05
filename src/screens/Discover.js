@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Text } from "react-native";
-import { CardList, GenreCard } from "../components";
+import { CardList, GenreCard, Search } from "../components";
 import { useGenres } from "../services/movieService";
 
 export function Discover({ navigation }) {
@@ -12,22 +12,25 @@ export function Discover({ navigation }) {
   }
   if (error) throw error;
   return (
-    <CardList>
-      <GenreCard
-        key={0}
-        data={{ id: 0, name: "All" }}
-        navigate={navigation?.navigate}
-      />
-      {genres.map(genre => {
-        return (
-          <GenreCard
-            key={genre.id}
-            data={genre}
-            navigate={navigation?.navigate}
-          />
-        );
-      })}
-    </CardList>
+    <>
+      <Search navigate={navigation.navigate} />
+      <CardList>
+        <GenreCard
+          key={0}
+          data={{ id: 0, name: "All" }}
+          navigate={navigation?.navigate}
+        />
+        {genres.map(genre => {
+          return (
+            <GenreCard
+              key={genre.id}
+              data={genre}
+              navigate={navigation?.navigate}
+            />
+          );
+        })}
+      </CardList>
+    </>
   );
 }
 

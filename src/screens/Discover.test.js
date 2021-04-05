@@ -5,6 +5,8 @@ import { useGenres } from "../services/movieService";
 
 jest.mock("../services/movieService");
 
+const navigationMock = { navigate: jest.fn() };
+
 describe("Discover", () => {
   it("renders the genre list", async () => {
     useGenres.mockReturnValue({
@@ -13,7 +15,7 @@ describe("Discover", () => {
         { id: 2, name: "Adventure" },
       ],
     });
-    const { getByText } = render(<Discover />);
+    const { getByText } = render(<Discover navigation={navigationMock} />);
     getByText(/Action/i);
     getByText("Adventure");
   });
@@ -26,7 +28,7 @@ describe("Discover", () => {
       ],
       loading: true,
     });
-    const { getByText } = render(<Discover />);
+    const { getByText } = render(<Discover navigation={navigationMock} />);
     getByText("Loading...");
     expect(() => getByText("Action")).toThrow();
   });
@@ -35,7 +37,7 @@ describe("Discover", () => {
     useGenres.mockReturnValue({
       genres: null,
     });
-    const { getByText } = render(<Discover />);
+    const { getByText } = render(<Discover navigation={navigationMock} />);
     getByText(/no genres available/i);
   });
 
@@ -56,7 +58,9 @@ describe("Discover", () => {
         ],
         error: new Error("Kaboom"),
       });
-      expect(() => render(<Discover />)).toThrow("Kaboom");
+      expect(() => render(<Discover navigation={navigationMock} />)).toThrow(
+        "Kaboom"
+      );
     });
   });
 });
