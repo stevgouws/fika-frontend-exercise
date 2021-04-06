@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { StyleSheet, Text, TouchableHighlight } from "react-native";
-import { Colours, Spacing } from "../styles";
+import { StyleSheet, TouchableHighlight } from "react-native";
+import { Poster } from "../components";
 
-export function MovieCard({ data: { id, title }, navigate }) {
+export function MovieCard({ data: { id, title, poster_path }, navigate }) {
   return (
     <TouchableHighlight
       style={styles.container}
@@ -11,17 +11,13 @@ export function MovieCard({ data: { id, title }, navigate }) {
         navigate("Detail", { id, title });
       }}
     >
-      <Text>{title}</Text>
+      <Poster id={id} title={title} poster_path={poster_path} />
     </TouchableHighlight>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    borderColor: Colours.BLACK,
-    borderWidth: 1,
-    padding: Spacing.MD,
-    width: "50%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -32,6 +28,7 @@ MovieCard.propTypes = {
   data: PropTypes.shape({
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
+    poster_path: PropTypes.string,
   }),
   navigate: PropTypes.func,
 };

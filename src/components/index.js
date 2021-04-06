@@ -3,3 +3,4 @@ export { Search } from "./Search";
 export { GenreCard } from "./GenreCard";
 export { MovieCard } from "./MovieCard";
 export { Movie } from "./Movie";
+export { Poster } from "./Poster";

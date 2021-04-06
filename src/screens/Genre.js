@@ -5,7 +5,7 @@ import { CardList, MovieCard } from "../components";
 import { useDiscover } from "../services/movieService";
 
 export function Genre({ route, navigation }) {
-  const { id, name } = route.params;
+  const { id } = route.params;
   const { movies, loading, error } = useDiscover({ genreId: id });
   if (loading) return <Text>Loading...</Text>;
   if (!movies) {
