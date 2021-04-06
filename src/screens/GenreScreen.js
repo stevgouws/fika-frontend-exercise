@@ -4,7 +4,7 @@ import { MovieCard } from "../components";
 import { useDiscover } from "../services/movieService";
 import { CardList, UI_Text } from "../components/ui";
 
-export function Genre({ route, navigation }) {
+export function GenreScreen({ route, navigation }) {
   const { id } = route.params;
   const { movies, loading, error } = useDiscover({ genreId: id });
   if (loading) return <UI_Text>Loading...</UI_Text>;
@@ -32,7 +32,7 @@ export function Genre({ route, navigation }) {
   );
 }
 
-Genre.propTypes = {
+GenreScreen.propTypes = {
   route: PropTypes.object.isRequired,
   navigation: PropTypes.object,
 };

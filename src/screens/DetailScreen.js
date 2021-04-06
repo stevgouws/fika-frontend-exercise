@@ -4,7 +4,7 @@ import { UI_Text } from "../components/ui";
 import { Movie } from "../components";
 import { useMovie } from "../services/movieService";
 
-export function Detail({ route }) {
+export function DetailScreen({ route }) {
   const { id } = route.params;
   const { details, loading, error } = useMovie({ id });
   if (loading) return <UI_Text>Loading...</UI_Text>;
@@ -20,6 +20,6 @@ export function Detail({ route }) {
   return <Movie data={details} />;
 }
 
-Detail.propTypes = {
+DetailScreen.propTypes = {
   route: PropTypes.object.isRequired,
 };

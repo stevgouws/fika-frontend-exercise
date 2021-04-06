@@ -1,11 +1,11 @@
 import React from "react";
 import { render } from "@testing-library/react-native";
-import { Genre } from "../screens";
+import { GenreScreen } from ".";
 import { useDiscover } from "../services/movieService";
 
 jest.mock("../services/movieService");
 
-describe("Genre", () => {
+describe("GenreScreen", () => {
   describe("given that there are movies for a genre", () => {
     it("renders the genre name and movie list", async () => {
       useDiscover.mockReturnValue({
@@ -15,7 +15,7 @@ describe("Genre", () => {
         ],
       });
       const { getByText } = render(
-        <Genre route={{ params: { name: "Action" } }} />
+        <GenreScreen route={{ params: { name: "Action" } }} />
       );
 
       useDiscover.mockReturnValue({
@@ -35,7 +35,7 @@ describe("Genre", () => {
       loading: true,
     });
     const { getByText } = render(
-      <Genre route={{ params: { name: "Action" } }} />
+      <GenreScreen route={{ params: { name: "Action" } }} />
     );
     getByText("Loading...");
     expect(() => getByText("Godzilla")).toThrow();
@@ -46,7 +46,7 @@ describe("Genre", () => {
       movies: null,
     });
     const { getByText } = render(
-      <Genre route={{ params: { name: "Action" } }} />
+      <GenreScreen route={{ params: { name: "Action" } }} />
     );
     getByText(/no movies available/i);
   });
@@ -64,7 +64,7 @@ describe("Genre", () => {
         error: new Error("Kaboom"),
       });
       expect(() =>
-        render(<Genre route={{ params: { name: "Action" } }} />)
+        render(<GenreScreen route={{ params: { name: "Action" } }} />)
       ).toThrow("Kaboom");
     });
   });

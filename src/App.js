@@ -4,7 +4,7 @@ import { registerRootComponent } from "expo";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { ErrorBoundary } from "./ErrorBoundary";
-import { Discover, Genre, Detail } from "./screens";
+import { DiscoverScreen, GenreScreen, DetailScreen } from "./screens";
 import { BaseLayout } from "./components/BaseLayout";
 
 const Stack = createStackNavigator();
@@ -14,30 +14,30 @@ export function App() {
     <ErrorBoundary>
       <NavigationContainer>
         <Stack.Navigator headerMode="screen">
-          <Stack.Screen name="Discover">
+          <Stack.Screen name="DiscoverScreen" options={{ title: "Discover" }}>
             {props => (
               <BaseLayout>
-                <Discover {...props} />
+                <DiscoverScreen {...props} />
               </BaseLayout>
             )}
           </Stack.Screen>
           <Stack.Screen
-            name="Genre"
+            name="GenreScreen"
             options={({ route }) => ({ title: route.params.name })}
           >
             {props => (
               <BaseLayout>
-                <Genre {...props} />
+                <GenreScreen {...props} />
               </BaseLayout>
             )}
           </Stack.Screen>
           <Stack.Screen
-            name="Detail"
+            name="DetailScreen"
             options={({ route }) => ({ title: route.params.title })}
           >
             {props => (
               <BaseLayout>
-                <Detail {...props} />
+                <DetailScreen {...props} />
               </BaseLayout>
             )}
           </Stack.Screen>

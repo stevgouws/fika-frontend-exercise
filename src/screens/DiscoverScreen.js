@@ -4,7 +4,7 @@ import { GenreCard, Search } from "../components";
 import { useGenres } from "../services/movieService";
 import { CardList, UI_Text } from "../components/ui";
 
-export function Discover({ navigation }) {
+export function DiscoverScreen({ navigation }) {
   const { genres, loading, error } = useGenres();
   if (loading) return <UI_Text>Loading...</UI_Text>;
   if (!genres) {
@@ -34,6 +34,6 @@ export function Discover({ navigation }) {
   );
 }
 
-Discover.propTypes = {
+DiscoverScreen.propTypes = {
   navigation: PropTypes.object,
 };

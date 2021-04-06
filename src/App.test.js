@@ -29,9 +29,9 @@ describe("App", () => {
     });
   });
 
-  it("renders the Discover screen initially", () => {
+  it("renders the DiscoverScreen screen initially", () => {
     const { getByText } = render(<App />);
-    getByText("Discover");
+    getByText("DiscoverScreen");
   });
 
   describe("Routing", () => {

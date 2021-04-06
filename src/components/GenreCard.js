@@ -9,7 +9,7 @@ export function GenreCard({ data: { id, name }, navigate }) {
     <UI_TouchableHighlight
       style={styles.container}
       onPress={() => {
-        navigate("Genre", { id, name });
+        navigate("GenreScreen", { id, name });
       }}
     >
       <UI_Text>{name}</UI_Text>

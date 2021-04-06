@@ -38,7 +38,7 @@ export function SearchResults({ query, navigate }) {
       <UI_TouchableHighlight
         key={id}
         onPress={() => {
-          navigate("Detail", { id, title });
+          navigate("DetailScreen", { id, title });
         }}
         underlayColor={Colours.PRIMARY_250}
         style={styles.touchContainer}

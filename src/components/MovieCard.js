@@ -9,7 +9,7 @@ export function MovieCard({ data: { id, title, poster_path }, navigate }) {
     <UI_TouchableHighlight
       style={styles.container}
       onPress={() => {
-        navigate("Detail", { id, title });
+        navigate("DetailScreen", { id, title });
       }}
     >
       <Poster id={id} title={title} poster_path={poster_path} />
