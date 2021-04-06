@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { StyleSheet, Text, TouchableHighlight } from "react-native";
+import { StyleSheet, TouchableHighlight } from "react-native";
 import { Colours, Spacing } from "../styles";
+import { UI_Text } from "../components/ui";
 
 export function GenreCard({ data: { id, name }, navigate }) {
   return (
@@ -11,7 +12,7 @@ export function GenreCard({ data: { id, name }, navigate }) {
         navigate("Genre", { id, name });
       }}
     >
-      <Text>{name}</Text>
+      <UI_Text>{name}</UI_Text>
     </TouchableHighlight>
   );
 }

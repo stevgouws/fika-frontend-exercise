@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import { Poster } from "../components";
+import { UI_Text } from "../components/ui";
 
 export function Movie({
   data: {
@@ -16,11 +17,11 @@ export function Movie({
   return (
     <View>
       <Poster title={title} poster_path={poster_path} />
-      <Text>{release_date}</Text>
-      <Text>
+      <UI_Text>{release_date}</UI_Text>
+      <UI_Text>
         {vote_average} from {vote_count} votes
-      </Text>
-      <Text>{overview}</Text>
+      </UI_Text>
+      <UI_Text>{overview}</UI_Text>
     </View>
   );
 }

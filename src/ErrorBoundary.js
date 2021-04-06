@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Text } from "react-native";
 import { View, StyleSheet } from "react-native";
 import { Colours } from "./styles";
+import { UI_Text } from "./components/ui";
 
 export class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -21,8 +21,8 @@ export class ErrorBoundary extends React.Component {
     if (error) {
       return (
         <View style={styles.container}>
-          <Text>Sorry, something went wrong.</Text>
-          <Text>{error && error.toString()}</Text>
+          <UI_Text>Sorry, something went wrong.</UI_Text>
+          <UI_Text>{error && error.toString()}</UI_Text>
         </View>
       );
     }
@@ -33,7 +33,7 @@ export class ErrorBoundary extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colours.WHITE,
+    backgroundColor: Colours.NEUTRAL_700,
     alignItems: "center",
     justifyContent: "center",
   },

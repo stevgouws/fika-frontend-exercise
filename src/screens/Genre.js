@@ -1,18 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Text } from "react-native";
 import { CardList, MovieCard } from "../components";
 import { useDiscover } from "../services/movieService";
+import { UI_Text } from "../components/ui";
 
 export function Genre({ route, navigation }) {
   const { id } = route.params;
   const { movies, loading, error } = useDiscover({ genreId: id });
-  if (loading) return <Text>Loading...</Text>;
+  if (loading) return <UI_Text>Loading...</UI_Text>;
   if (!movies) {
     return (
-      <Text>
+      <UI_Text>
         No movies available in this genre, try searching for a movie...
-      </Text>
+      </UI_Text>
     );
   }
   if (error) throw error;

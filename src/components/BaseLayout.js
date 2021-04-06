@@ -15,7 +15,7 @@ export function BaseLayout({ children }) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: Colours.WHITE,
+    backgroundColor: Colours.NEUTRAL_700,
     flex: 1,
     alignItems: "flex-start",
     justifyContent: "flex-start",
