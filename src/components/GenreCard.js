@@ -1,19 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { StyleSheet, TouchableHighlight } from "react-native";
-import { Colours, Spacing } from "../styles";
-import { UI_Text } from "../components/ui";
+import { StyleSheet } from "react-native";
+import { Spacing } from "../styles";
+import { UI_Text, UI_TouchableHighlight } from "../components/ui";
 
 export function GenreCard({ data: { id, name }, navigate }) {
   return (
-    <TouchableHighlight
+    <UI_TouchableHighlight
       style={styles.container}
       onPress={() => {
         navigate("Genre", { id, name });
       }}
     >
       <UI_Text>{name}</UI_Text>
-    </TouchableHighlight>
+    </UI_TouchableHighlight>
   );
 }
 

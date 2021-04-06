@@ -2,15 +2,22 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Searchbar } from "react-native-paper";
 import { useSearch } from "../services/movieService";
-import { Text, TouchableHighlight } from "react-native";
-import { UI_Text } from "../components/ui";
+import { View, StyleSheet } from "react-native";
+import { UI_Text, UI_TouchableHighlight } from "../components/ui";
+import { Colours, Spacing } from "../styles";
 
 export function Search({ navigate }) {
   const [query, setQuery] = React.useState("");
 
   return (
     <>
-      <Searchbar placeholder="Search" onChangeText={setQuery} value={query} />
+      <Searchbar
+        placeholder="Search"
+        onChangeText={setQuery}
+        value={query}
+        iconColor={Colours.PRIMARY_300}
+        style={styles.searchBar}
+      />
       {!!query && <SearchResults query={query} navigate={navigate} />}
     </>
   );
@@ -28,15 +35,24 @@ export function SearchResults({ query, navigate }) {
 
   return results.map(({ id, title }) => {
     return (
-      <TouchableHighlight
-        // style={styles.container}
+      <UI_TouchableHighlight
         key={id}
         onPress={() => {
           navigate("Detail", { id, title });
         }}
+        underlayColor={Colours.PRIMARY_250}
+        style={styles.touchContainer}
       >
-        <UI_Text>{title}</UI_Text>
-      </TouchableHighlight>
+        <View style={styles.container}>
+          <UI_Text>{title}</UI_Text>
+        </View>
+      </UI_TouchableHighlight>
     );
   });
 }
+
+const styles = StyleSheet.create({
+  searchBar: { alignSelf: "stretch", borderRadius: 0 },
+  touchContainer: { alignSelf: "stretch" },
+  container: { padding: Spacing.MD },
+});

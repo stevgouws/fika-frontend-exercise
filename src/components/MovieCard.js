@@ -1,18 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { StyleSheet, TouchableHighlight } from "react-native";
+import { StyleSheet } from "react-native";
 import { Poster } from "../components";
+import { UI_TouchableHighlight } from "../components/ui";
 
 export function MovieCard({ data: { id, title, poster_path }, navigate }) {
   return (
-    <TouchableHighlight
+    <UI_TouchableHighlight
       style={styles.container}
       onPress={() => {
         navigate("Detail", { id, title });
       }}
     >
       <Poster id={id} title={title} poster_path={poster_path} />
-    </TouchableHighlight>
+    </UI_TouchableHighlight>
   );
 }
 
