@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { CardList, MovieCard } from "../components";
+import { MovieCard } from "../components";
 import { useDiscover } from "../services/movieService";
-import { UI_Text } from "../components/ui";
+import { CardList, UI_Text } from "../components/ui";
 
 export function Genre({ route, navigation }) {
   const { id } = route.params;

@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { CardList, GenreCard, Search } from "../components";
+import { GenreCard, Search } from "../components";
 import { useGenres } from "../services/movieService";
-import { UI_Text } from "../components/ui";
+import { CardList, UI_Text } from "../components/ui";
 
 export function Discover({ navigation }) {
   const { genres, loading, error } = useGenres();
