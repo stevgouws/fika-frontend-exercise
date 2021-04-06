@@ -51,3 +51,13 @@ You can then choose to preview on Web, iOS simulator or Android emulator
 ```bash
 yarn test
 ```
+
+### Potential Improvements
+
+- Fix act() warning from routing test
+- Load more results via infinite scroll
+- Extract & style Loader component
+- Move Search functionality to header and search results to overlay/modal
+- Run tests in CI
+- Achieve consistency with inline styles vs. stylesheets
+- Find way to safely override custom UI component styles from higher level
