@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { View } from "react-native";
 import { Poster } from "../components";
-import { UI_Text } from "../components/ui";
+import { UI_Text, H2, H3 } from "../components/ui";
+import { Spacing } from "../styles";
 
 export function Movie({
   data: {
@@ -15,12 +16,16 @@ export function Movie({
   },
 }) {
   return (
-    <View>
-      <Poster title={title} poster_path={poster_path} />
-      <UI_Text>{release_date}</UI_Text>
-      <UI_Text>
-        {vote_average} from {vote_count} votes
-      </UI_Text>
+    <View style={{ padding: Spacing.MD }}>
+      <Poster
+        title={title}
+        poster_path={poster_path}
+        style={{ marginBottom: Spacing.MD }}
+      />
+      <H2>Release Date: {release_date}</H2>
+      <H3>
+        {vote_average} average from {vote_count} votes
+      </H3>
       <UI_Text>{overview}</UI_Text>
     </View>
   );

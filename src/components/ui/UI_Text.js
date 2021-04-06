@@ -1,17 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Text, StyleSheet } from "react-native";
+import { Text } from "react-native";
 import { Colours } from "../../styles";
 
-export function UI_Text({ children }) {
-  return <Text style={styles.container}>{children}</Text>;
-}
-
-const styles = StyleSheet.create({
-  container: {
+export function UI_Text({ children, style }) {
+  const styles = {
     color: Colours.NEUTRAL_100,
-  },
-});
+    ...style,
+  };
+  return <Text style={styles}>{children}</Text>;
+}
 
 UI_Text.propTypes = {
   children: PropTypes.oneOfType([
@@ -19,4 +17,5 @@ UI_Text.propTypes = {
     PropTypes.array,
     PropTypes.string,
   ]),
+  style: PropTypes.object,
 };
