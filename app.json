@@ -13,9 +13,12 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.stevgouws.fika-search"
     },
     "android": {
       "adaptiveIcon": {
@@ -25,6 +28,8 @@
     },
     "web": {
       "favicon": "./src/assets/favicon.png"
-    }
+    },
+    "description": "A small basic React Native app using Expo to list movies for the Fika Frontend Exercise.",
+    "githubUrl": "https://github.com/stevgouws/fika-frontend-exercise"
   }
 }
