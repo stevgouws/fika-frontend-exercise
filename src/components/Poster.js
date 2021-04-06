@@ -6,7 +6,7 @@ export function Poster({ title, poster_path }) {
   if (!poster_path) return <Text>{title}</Text>;
   return (
     <Image
-      source={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+      source={{ uri: `https://image.tmdb.org/t/p/w500/${poster_path}` }}
       style={styles.image}
       accessibilityLabel={title}
     />
