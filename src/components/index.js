@@ -1,6 +1,8 @@
-export { CardList } from "./CardList";
-export { Search } from "./Search";
-export { GenreCard } from "./GenreCard";
-export { MovieCard } from "./MovieCard";
-export { Movie } from "./Movie";
-export { Poster } from "./Poster";
+import { CardList } from "./CardList";
+import { Search } from "./Search";
+import { GenreCard } from "./GenreCard";
+import { MovieCard } from "./MovieCard";
+import { Movie } from "./Movie";
+import { Poster } from "./Poster";
+import { Genre } from "../screens/index";
+export { CardList, Search, GenreCard, Genre, Movie, MovieCard, Poster };
