@@ -19,8 +19,6 @@ export function GenreCard({ data: { id, name }, navigate }) {
 
 const styles = StyleSheet.create({
   container: {
-    borderColor: Colours.BLACK,
-    borderWidth: 1,
     padding: Spacing.MD,
     width: "50%",
     display: "flex",
