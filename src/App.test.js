@@ -2,11 +2,14 @@ import React from "react";
 import { render, fireEvent } from "@testing-library/react-native";
 import { App } from "./App";
 import { useGenres, useDiscover, useMovie } from "./services/movieService";
+import { useFonts } from "expo-font";
 
 jest.mock("./services/movieService");
+jest.mock("expo-font");
 
 describe("App", () => {
   beforeAll(() => {
+    useFonts.mockReturnValue([true]);
     useGenres.mockReturnValue({
       genres: [{ id: 1, name: "Action" }],
     });
@@ -29,14 +32,14 @@ describe("App", () => {
     });
   });
 
-  it("renders the DiscoverScreen screen initially", () => {
+  it("renders the Discover screen initially", () => {
     const { getByText } = render(<App />);
-    getByText("DiscoverScreen");
+    getByText("Discover");
   });
 
   describe("Routing", () => {
     it("routes to the genre page and the detail page", async () => {
-      const { getByText, findByText } = render(<App />);
+      const { findByText, getByText } = render(<App />);
       fireEvent.press(getByText("Action"));
       fireEvent.press(getByText("Godzilla"));
       await findByText("A really interesting movie synopsis");

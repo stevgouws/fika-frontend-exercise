@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { StyleSheet } from "react-native";
 import { Spacing } from "../styles";
-import { UI_Text, UI_TouchableHighlight } from "../components/ui";
+import { H3, UI_TouchableHighlight } from "../components/ui";
 
 export function GenreCard({ data: { id, name }, navigate }) {
   return (
@@ -12,7 +12,7 @@ export function GenreCard({ data: { id, name }, navigate }) {
         navigate("GenreScreen", { id, name });
       }}
     >
-      <UI_Text>{name}</UI_Text>
+      <H3 noMargin>{name}</H3>
     </UI_TouchableHighlight>
   );
 }

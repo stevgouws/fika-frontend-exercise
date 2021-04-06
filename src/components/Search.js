@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Searchbar } from "react-native-paper";
 import { useSearch } from "../services/movieService";
 import { View, StyleSheet } from "react-native";
-import { UI_Text, UI_TouchableHighlight } from "../components/ui";
+import { UI_Text, UI_TouchableHighlight, H3 } from "../components/ui";
 import { Colours, Spacing } from "../styles";
 
 export function Search({ navigate }) {
@@ -44,7 +44,7 @@ export function SearchResults({ query, navigate }) {
         style={styles.touchContainer}
       >
         <View style={styles.container}>
-          <UI_Text>{title}</UI_Text>
+          <H3 noMargin>{title}</H3>
         </View>
       </UI_TouchableHighlight>
     );

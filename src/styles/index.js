@@ -1,3 +1,4 @@
 import * as Colours from "./colours";
 import * as Spacing from "./spacing";
-export { Colours, Spacing };
+import * as Typography from "./typography";
+export { Colours, Spacing, Typography };
