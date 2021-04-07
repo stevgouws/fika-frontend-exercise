@@ -4,7 +4,7 @@ import { StyleSheet } from "react-native";
 import { Poster } from "../components";
 import { UI_TouchableHighlight } from "../components/ui";
 
-export function MovieCard({ data: { id, title, poster_path }, navigate }) {
+export function MovieCard({ id, title, poster_path, navigate }) {
   return (
     <UI_TouchableHighlight
       style={styles.container}
@@ -26,10 +26,8 @@ const styles = StyleSheet.create({
 });
 
 MovieCard.propTypes = {
-  data: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    poster_path: PropTypes.string,
-  }),
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  poster_path: PropTypes.string,
   navigate: PropTypes.func,
 };

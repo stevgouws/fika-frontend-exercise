@@ -7,7 +7,9 @@ export function useGenres() {
   const { data, loading, error } = useFetch(
     `${baseUrl}genre/movie/list${defaultQueryParams}`
   );
-  return { genres: data?.genres, loading, error };
+  const allGenre = { id: 0, name: "All" };
+  const genres = data?.genres && [allGenre, ...data.genres];
+  return { genres, loading, error };
 }
 
 export function useDiscover({ genreId }) {

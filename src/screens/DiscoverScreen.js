@@ -15,16 +15,11 @@ export function DiscoverScreen({ navigation }) {
     <>
       <Search navigate={navigation.navigate} />
       <CardList>
-        <GenreCard
-          key={0}
-          data={{ id: 0, name: "All" }}
-          navigate={navigation?.navigate}
-        />
         {genres.map(genre => {
           return (
             <GenreCard
               key={genre.id}
-              data={genre}
+              {...genre}
               navigate={navigation?.navigate}
             />
           );

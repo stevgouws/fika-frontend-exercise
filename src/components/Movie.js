@@ -6,14 +6,12 @@ import { UI_Text, H2, H3 } from "../components/ui";
 import { Spacing } from "../styles";
 
 export function Movie({
-  data: {
-    overview,
-    release_date,
-    vote_average,
-    vote_count,
-    poster_path,
-    title,
-  },
+  overview,
+  release_date,
+  vote_average,
+  vote_count,
+  poster_path,
+  title,
 }) {
   return (
     <View style={{ padding: Spacing.MD }}>
@@ -32,12 +30,10 @@ export function Movie({
 }
 
 Movie.propTypes = {
-  data: PropTypes.shape({
-    overview: PropTypes.string,
-    release_date: PropTypes.string,
-    vote_average: PropTypes.number,
-    vote_count: PropTypes.number,
-    poster_path: PropTypes.string,
-    title: PropTypes.string,
-  }),
+  overview: PropTypes.string,
+  release_date: PropTypes.string,
+  vote_average: PropTypes.number,
+  vote_count: PropTypes.number,
+  poster_path: PropTypes.string,
+  title: PropTypes.string,
 };

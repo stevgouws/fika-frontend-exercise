@@ -4,7 +4,7 @@ import { StyleSheet } from "react-native";
 import { Spacing } from "../styles";
 import { H3, UI_TouchableHighlight } from "../components/ui";
 
-export function GenreCard({ data: { id, name }, navigate }) {
+export function GenreCard({ id, name, navigate }) {
   return (
     <UI_TouchableHighlight
       style={styles.container}
@@ -28,9 +28,7 @@ const styles = StyleSheet.create({
 });
 
 GenreCard.propTypes = {
-  data: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-  }),
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
   navigate: PropTypes.func,
 };

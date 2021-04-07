@@ -23,7 +23,7 @@ export function GenreScreen({ route, navigation }) {
         return (
           <MovieCard
             key={movie.id}
-            data={movie}
+            {...movie}
             navigate={navigation?.navigate}
           />
         );

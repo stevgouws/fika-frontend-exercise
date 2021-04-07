@@ -17,7 +17,7 @@ export function DetailScreen({ route }) {
   }
   if (error) throw error;
 
-  return <Movie data={details} />;
+  return <Movie {...details} />;
 }
 
 DetailScreen.propTypes = {
